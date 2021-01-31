@@ -1,6 +1,9 @@
-
+.container-sec{
+  display: flex;
+}
 .change{
   position: relative;
+  align-content: center;
   height: 630px;
   width: 530px;
 
@@ -9,4 +12,22 @@
 .drawing{
   position: relative;
   height: 200px;
+}
+
+
+.imagelist{
+  border: 1px solid white;
+  background-color: gray;
+  border-radius: 10px;
+  margin: 2px;
+}
+.definedImages {
+  height: 100px;
+  width: 100px;
+}
+
+.addImage{
+  display: flex;
+  flex-wrap: wrap;
+  width: 220px;
 }

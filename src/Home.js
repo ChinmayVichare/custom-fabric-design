@@ -1,51 +1,28 @@
-import React,{useContext,useState,useEffect}from 'react'
+import React,{useContext}from 'react'
 import { AppContext} from "./App";
 import crew_front from "./imges/crew_front.png"
-import {fabric} from 'fabric';
-const Home = () => {
-    const [sel, setsel] = useState("")
-    const{color1,setcolor1}=useContext(AppContext)
-    const [canvas, setcanvas] = useState("canvas")
 
-    const initcanvas=(id)=>{
-        return new fabric.Canvas(id,{
-            width:200,
-            height:300,
-            backgroundColor:"red"
-        })
-    }
+const Home = () => {  
+    const{color1}=useContext(AppContext)
 
-    useEffect(() => {
-        
-        initcanvas(canvas)
-
-    }, [canvas])
-    
-
-    const changecolor =(e)=>{
-        setsel(e.target.value)
-        console.log(e.target.value);
-        setcolor1({backgroundColor:e.target.value})
-        console.log(color1);
-    }
     return (
-        <div>
-
-            <div className="change" style={color1}>
+        <div className="main-conatiner">
+            <div className="sub-conatiner">
                 
+            <div className="change" style={color1}>
                 <p><img src={crew_front} alt=""/></p>
             </div>
 
-            <div className="drawing">
+            <div className="drawing" style={{
+                 position: "absolute",
+            top: "100px",
+            left: "170px",
+            zIndex: 10,
+            width: "200px",
+            height: "400px",}}>
                 <canvas id="canvas"></canvas>
             </div>
 
-            <div>
-            <select name="" id="" value={sel} onChange={changecolor}>
-                    <option value="red" >red</option>
-                    <option value="yellow">yeloow</option>
-                    <option value="blue">blue</option>
-                </select>
             </div>
             
         </div>
