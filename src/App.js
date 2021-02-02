@@ -8,10 +8,12 @@ import  "./App.css";
 export const AppContext = React.createContext();
 
 function App() {
+  // const [color,setcolor]=useState({backgroundColor:"pink"})
   const [color1, setcolor1] = useState({backgroundColor:"pink"})
     const [sel, setsel] = useState("")
     const [canvas, setcanvas] = useState("")
     const [selectimg,setselectimg]=useState(defaultImage)
+ 
 
 
   const initcanvas=()=>
@@ -26,10 +28,12 @@ useEffect(() => {
 }, [])
 
 const changecolor =(e)=>{
-  setsel(e.target.value)
-  console.log(e.target.value);
+  // setcolor(e.target.value)
+  // setsel(e.target.value)
+  // console.log(e.target.value);
   setcolor1({backgroundColor:e.target.value})
-  console.log(color1);
+  // console.log(color1);
+ 
 }
 
 const addImage = () => {
@@ -49,6 +53,7 @@ const removeImage=()=>{
   }
   canvas.remove(object);
 }
+
   return (
     <div className="App">
       <AppContext.Provider value={{color1,setcolor1,sel,
